@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Build Map</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/map.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/mapstore-theme.css">
+</head>
+<body>
+
+<div id="zoom_div" class="btn btn-success">
+	<div class="zoom_div_btn" onclick="zoom_in();" >+</div>
+	<div class="zoom_div_btn" onclick="zoom_out();">-</div>
+</div>
+
+<div id="search_div" onmousedown="activate_search_div_switch(event);deactivate_global_move_switch();" onmousemove="update_search_div_switch(event);deactivate_global_move_switch();" onmouseup="deactivate_search_div_switch();deactivate_global_move_switch();" >
+	<div id="search_div_outliner">
+	<input type="text" name="" id="search_div_search_input" placeholder="Search products">
+	<img src="img/loupe.png" id="search_div_img">
+	</div>
+</div>
+
+<div class="btn-add-elements"><button class="btn btn-danger btn-circle btn-md" onclick="toggle_options_div()" style="background-color:white;"><img src="img/checklist.png" width="25px" style="margin:0 auto;"></button></div>
+
+<div id="options_div" class="centered" onmousedown="activate_options_div_switch(event);deactivate_global_move_switch();" onmousemove="update_options_div_switch(event);deactivate_global_move_switch();" onmouseup="deactivate_options_div_switch();deactivate_global_move_switch();">
+	
+	<div id="options_div_header" style="background-color:#EF5167;border-radius:10px 10px 0px 0px;padding:5% 5% 5% 10% !important;">
+		<div class="options_div_header_text col-lg-4 col-md-4 col-sm-12" onclick="load_store_map_btns();" style="color:white!important;font-weight: bold;font-size:30px;text-align: center;display: block !important;padding-left:0;padding-right: 0;;">Shopping List</div>
+	</div>
+
+	<div>
+		<hr class="hr_style">
+	</div>
+
+	<div id="options_div_buttons">
+		<ul class="mx-auto d-block" id="myUL">
+			<li>Item no 1</li>
+			<li>Item no 2</li>
+			<li>Item no 3</li>
+			<li>Item no 4</li>
+		</ul>
+	</div>
+
+	<hr class="hr_style">
+
+
+</div>
+
+<div id="map">
+	<img src="img/location.png" id="location_tag" onmousedown="switch_on_location_tag(event);" onmouseup="switch_off_location_tag();" onmousemove="move_location_tag(event);">
+</div>
+
+<script src="js/shoppingList.js"></script>
+
+</body>
+</html>
