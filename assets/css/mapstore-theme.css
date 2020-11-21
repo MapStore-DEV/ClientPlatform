@@ -1,0 +1,155 @@
+.color-BASE-BLUE{
+    color: #8EDCEA !important;
+}
+.color-LIGHT-BLUE{
+    color: #BFEFF8 !important;
+}
+.color-WHITE-BLUE{
+    color: #F4FDFF !important;
+}
+.color-GREEN-BLUE {
+    color: #64C4D6 !important;
+}
+.color-DARK-GREEN-BLUE{
+    color: #3FA5B8 !important;
+}
+.color-GRAY{
+    color: #728185 !important;
+}
+.color-GRAY-DARK{
+    color: #3E565D !important;
+}
+.color-GRAY-LIGHT{
+    color: #c0d1d1 !important;
+}
+.color-BASE-PINK{
+    color: #EF5167 !important;
+}
+.color-LIGHT-PINK{
+    color: #F67587 !important;
+}
+.color-WHITE-PINK{
+    color: #FAA1AD !important;
+}
+.color-RED-PINK{
+    color: #DB2C44 !important;
+}
+.color-DARK-RED-PINK{
+    color: #B11228 !important;
+}
+
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 6px 0px; 
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center; 
+} 
+.btn-circle.btn-md { 
+    width: 50px; 
+    height: 50px; 
+    padding: 7px 10px; 
+    border-radius: 25px; 
+    font-size: 10px; 
+    text-align: center; 
+    border: 1px solid #EF5167;
+} 
+.btn-circle.btn-xl { 
+    width: 120px; 
+    height: 120px; 
+    padding: 10px 16px; 
+    border-radius: 60px; 
+    font-size: 12px; 
+    text-align: center; 
+    border: 1px solid #EF5167;
+}
+
+.btn-circle.btn-md:hover, .btn-circle.btn-sm:hover, .btn-circle.btn-xl:hover{
+    box-shadow: 0px 0px 15px rgba(33,33,33,.5); 
+}
+
+#btn-add-store{
+    padding-top: 40px;;
+}
+
+.store-card{
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #BFEFF8;
+    border-color: #8EDCEA;
+}
+
+.btn-primary:hover {
+    background-color: #8EDCEA;
+}
+
+.btn-primary:focus {
+    background-color: #8EDCEA;
+}
+
+.btn-primary:active {
+    background-color: #8EDCEA;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #F67587;
+    border-color: #EF5167;
+}
+
+.btn-danger:hover {
+    background-color: #EF5167;
+}
+
+.btn-success{
+    color: #fff;
+    background-color: #64C4D6;
+    border-color: #3FA5B8;
+}
+
+.btn-success:hover{
+    background-color: #3FA5B8;
+}
+
+.btn-success:focus{
+    background-color: #3FA5B8;
+}
+
+.btn-add-elements{
+    left: 2%;
+    position: fixed;
+    bottom: 15px;
+}
+
+.btn-option{
+    padding-left:2px;
+    padding-right:2px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1199px) {
+    #options_div_lock_btn{
+        width: 97.5% !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #options_div_lock_btn{
+        width: 100% !important;
+    }
+    .options_div_btn{
+        width: 100% !important;
+    }
+    .options_div_btn_2{
+        width: 100% !important;
+    }
+    .options_div_header_text{
+        text-align: center;
+    }
+}
