@@ -19,8 +19,8 @@
 
 <div id="search_div" onmousedown="activate_search_div_switch(event);deactivate_global_move_switch();" onmousemove="update_search_div_switch(event);deactivate_global_move_switch();" onmouseup="deactivate_search_div_switch();deactivate_global_move_switch();" >
 	<div id="search_div_outliner">
-	<input type="text" name="" id="search_div_search_input" placeholder="Search products">
-	<img src="img/loupe.png" id="search_div_img">
+	<img src="img/loupe.png" class="col-lg-1" id="search_div_img">
+	<input type="text" name="" class="col-lg-11" id="search_div_search_input" placeholder="Search products">
 	</div>
 </div>
 
@@ -29,7 +29,7 @@
 <div id="options_div" class="centered">
 	
 	<div id="options_div_header" style="background-color:#EF5167;border-radius:10px 10px 0px 0px;padding:5% 5% 5% 10% !important;">
-		<div class="options_div_header_text col-lg-4 col-md-4 col-sm-12" onclick="load_store_map_btns();" style="color:white!important;font-weight: bold;font-size:20px;text-align: center;display: block !important;padding-left:0;padding-right: 0;;">Shopping List</div>
+		<div class="options_div_header_text col-lg-4 col-md-4 col-sm-12" style="color:white!important;font-weight: bold;font-size:20px;text-align: center;display: block !important;padding-left:0;padding-right: 0;;">Shopping List</div>
 	</div>
 
 	<div>
@@ -51,7 +51,7 @@
 </div>
 
 <div id="map">
-	<img src="img/location.png" id="location_tag" onmousedown="switch_on_location_tag(event);" onmouseup="switch_off_location_tag();" onmousemove="move_location_tag(event);">
+	
 </div>
 
 <script src="js/shoppingList.js"></script>
