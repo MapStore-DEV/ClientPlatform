@@ -770,3 +770,98 @@ function toggle_options_div()
 {
 	$('#options_div').slideToggle( "slow" );
 }
+
+function close_modal()
+{
+	$('#name_modal').click();
+}
+
+
+function re_add_block(block) 
+{
+	var name = block.name;
+	var id = "block_nr_" + block.id;
+	var x = block.x;
+	var y = block.y;
+	var height = block.height;
+	var width = block.width;
+	var border_radius = block.borderRadius;
+	var background_color = block.backgroundColor;
+	var transform = block.transform;
+	var font_size = block.fontSize;
+	var font_color = block.fontColor;
+	var products = block.products;
+	$("#map").html( $("#map").html() + "\n<div class='map_block' id='"+id+"' onclick='check_product_location("+blocks_count+");' onmousedown='activate_switch_block(event);' onmouseup='deactivate_switch_block();'><p class='map_block_text' id='map_block_text_"+blocks_count+"'>" + name + "</p></div>" );
+	var new_block = document.getElementById(id);
+	new_block.style.top = y;
+	new_block.style.left = x;
+	new_block.style.height = height;
+	new_block.style.width = width;
+	new_block.style.borderRadius = border_radius;
+	new_block.style.backgroundColor = background_color;
+	new_block.style.transform = transform;
+	new_block.style.fontSize = font_size;
+	new_block.style.fontColor = font_color;
+	//TODO: Need to add the products here
+
+}
+
+function deserialize_json(data) {
+	var parsed;
+	try {
+		parsed = JSON.parse(data);
+	} catch {
+		console.log("Failed to parse json, this might be cause by the poor server performance or a corrupted map. Try reloading the page...");
+		alert("Operation failed, try reloading the page.");
+	}
+	var blocks = parsed.blocks;
+	blocks.forEach(block => {
+		re_add_block(block);
+	});
+}
+
+window.onload = function () {
+	var url = document.location.href;
+	console.log("URL="+url);
+	var params = url.split('?');
+	if (params.length > 1){
+		params = params[1].split('&');
+        var data = {}, tmp;
+		for (var i = 0, l = params.length; i < l; i++) {
+			tmp = params[i].split('=');
+			data[tmp[0]] = tmp[1];
+		}
+		//data.hash contains map hash
+		console.log(">>"+data.map_hash);
+		try {
+			map_hash = data.map_hash;
+			console.log("HASHU="+map_hash);
+
+			$.ajax({
+				type: 'POST',
+				url: 'https://mapstore.tech/api/api.php',
+				dataType: 'text', 
+				cache:false,
+				data: {
+					p : map_hash,
+					q : 'ZgmIgQtPgtKIqn4dl7Sg' 
+				},
+				success: function(response){ 
+					console.log(response);
+					deserialize_json(response);
+					// alert("ALL GOOD");
+				},
+				error: function (request, status, error) {
+					alert(request.responseText);
+				}
+			});
+
+		} catch {
+
+		}
+	}
+	else{
+		alert("Map cannot be loaded");
+	}
+
+}

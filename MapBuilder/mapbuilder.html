@@ -9,8 +9,74 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/mapstore-theme.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<!-- <script>
+	window.onload = function () {
+    var url = document.location.href;
+    var params = url.split('?')[1].split('&');
+	var data = {};
+	var tmp;
+	console.log(params);
+    for (var i = 0, l = params.length; i < l; i++) {
+		 tmp = params[i].split('=');
+		 console.log(tmp[1]);
+         data[tmp[0]] = tmp[1].replace('%3B%3B','');
+	}
+	console.log(data);
+	if(data.map_hash.length > 2){
+		$.ajax({
+			type: 'POST',
+			url: 'https://mapstore.tech/api/api.php',
+			dataType: 'text', 
+			cache:false,
+			data: {
+				q : 'ZgmIgQtPgtKIqn4dl7Sg',
+				p :  data.map_hash
+			},
+			success: function(response){ 
+				console.log(response);
+				// response = JSON.parse(response);
+			},
+			error: function (request, status, error) {
+				alert(request.responseText);
+			}
+		});
+	}
+	else{
+		alert("No Map Loaded");
+	}
+}
+</script> -->
+
+
+<div id="here"></div>
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="name_modal" style="display:none">
+	Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-body">
+		  <div class="form-group">
+			  <label for="MAP_name" style="color:#EF5167">Prodct:</label>
+			  <img src="">
+			  <p>Price: 10RON</p>
+			  <p>Quantity Available: 120</p>
+			</div>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-primary" onclick="close_modal()">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
 
 <div id="zoom_div" class="btn btn-success">
 	<div class="zoom_div_btn" onclick="zoom_in();" >+</div>
@@ -19,7 +85,7 @@
 
 <div id="search_div" onmousedown="activate_search_div_switch(event);deactivate_global_move_switch();" onmousemove="update_search_div_switch(event);deactivate_global_move_switch();" onmouseup="deactivate_search_div_switch();deactivate_global_move_switch();" >
 	<div id="search_div_outliner">
-	<img src="img/loupe.png" class="col-lg-1" id="search_div_img">
+	<img src="img/loupe.png" class="" id="search_div_img">
 	<input type="text" name="" class="col-lg-11" id="search_div_search_input" placeholder="Search products">
 	</div>
 </div>
@@ -55,6 +121,10 @@
 </div>
 
 <script src="js/shoppingList.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+	toggle_options_div();
+</script>
 
 </body>
 </html>

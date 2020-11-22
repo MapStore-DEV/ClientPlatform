@@ -85,7 +85,6 @@ box-shadow: 0px 0px 4px 0px rgba(214,214,214,1);
 #search_div_img
 {
 	display: inline;
-	/* width: 5%; */
 	height: 25px;
 	float: left;
 }
@@ -346,8 +345,18 @@ box-shadow: 0px 0px 4px 0px rgba(214,214,214,1);
 	/* bring your own prefixes */
 	transform: translate(-50%, -50%);
   }
+
   @media screen and (max-width: 400px) {
 	.btn-add-elements {
 	  bottom: 2% !important;
+	  
 	}
 }
+@media screen and (min-width: 1000px) {
+	#options_div {
+		left: 350px !important;
+		width: 500px !important;
+	}
+}
+
+
